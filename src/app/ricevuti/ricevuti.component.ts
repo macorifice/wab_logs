@@ -8,31 +8,20 @@ import * as $ from 'jquery';
   //templateUrl: './ricevuti.component.html',
   template: 
   `
-  <div class="container">
-  <table>
-    <div class="jumbotron">
+  <mat-card class="example-card">
     <ul #scrollBottom *ngFor="let item of dataArray">
-    <li>
-    <b>Messaggio da:</b> {{item.contacts[0]['profile']['name']}}
-    </li>
-    <li>
+    <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><b>Messaggio da : </b>{{item.contacts[0]['profile']['name']}}</mat-card-title>
+  </mat-card-header>
+    <mat-card-content>
     <b>Numero:</b> {{item.messages[0]['from']}}
-    </li>
-    <li>
     <b>Testo:</b> {{item.messages[0]['text'].body}}
-    </li>
-    <li>
     <b>Ora:</b> {{item.messages[0]['timestamp'] * 1000 | date :'dd/MM/yyyy HH:mm':'+0000'}}
-    </li>
-    <li>
     <button routerLink="/rispondi" [queryParams]="{ number:item.messages[0]['from'], risposta:item.messages[0]['text'].body }" >Rispondi</button>
-    </li>
+    </mat-card-content>
     </ul>
-    </div>
-  </table>
-  <ul>
-</ul>
-  </div>`,
+    </mat-card>`,
   styleUrls: ['./ricevuti.component.scss']
 })
 export class RicevutiComponent implements OnInit {

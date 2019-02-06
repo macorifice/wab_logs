@@ -13,6 +13,22 @@ import { InviatiComponent } from './inviati/inviati.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { RispondiComponent } from './rispondi/rispondi.component';
+import {
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTableModule,
+  MatListModule,
+  MatSidenavModule
+} from '@angular/material';
+
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +45,35 @@ import { RispondiComponent } from './rispondi/rispondi.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatListModule,
+    MatSidenavModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [ReadfromglitchService],
   bootstrap: [AppComponent]

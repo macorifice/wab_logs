@@ -7,26 +7,19 @@ import * as $ from 'jquery';
   selector: 'app-inviati',
   // templateUrl: './inviati.component.html',
   template: `
-  <div class="container">
-  <table>
-    <div class="jumbotron">
+<mat-card class="example-card">
     <ul #scrollBottom *ngFor="let item of dataArray">
-    <li>
-    <b>Inviato a:</b> {{item.statuses[0]['recipient_id']}}
-    </li>
-    <li>
+    <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Message to : {{item.statuses[0]['recipient_id']}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
     <b>Stato:</b> {{item.statuses[0]['status']}}
-    </li>
-    <li>
     <b>Ora:</b> {{item.statuses[0]['timestamp'] * 1000 | date :'dd/MM/yyyy HH:mm':'+0000'}}
-    </li>
+    </mat-card-content>
     </ul>
-    </div>
-  </table>
-  <ul>
-</ul>
-  </div>`
-  ,
+ </mat-card>`
+  ,  
   styleUrls: ['./inviati.component.scss']
 })
 export class InviatiComponent implements OnInit {

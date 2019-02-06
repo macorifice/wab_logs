@@ -1,10 +1,8 @@
-table, th, td 
-{
-    margin: 10px 0;
-    border: solid 1px #333;
-    padding: 2px 4px;
-    font: 15px Verdana;
-}
-th {
-    font-weight:bold;
-}
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('/assets/icon_wab.png');
+    background-size: cover;
+  }
