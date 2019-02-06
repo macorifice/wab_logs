@@ -6,20 +6,30 @@ import * as $ from 'jquery';
 @Component({
   selector: 'app-inviati',
   // templateUrl: './inviati.component.html',
-  template: `
-<mat-card class="example-card">
+   template: `
+ <mat-card class="example-card">
     <ul #scrollBottom *ngFor="let item of dataArray">
     <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Message to : {{item.statuses[0]['recipient_id']}}</mat-card-title>
-    </mat-card-header>
+  </mat-card-header>
     <mat-card-content>
-    <b>Stato:</b> {{item.statuses[0]['status']}}
-    <b>Ora:</b> {{item.statuses[0]['timestamp'] * 1000 | date :'dd/MM/yyyy HH:mm':'+0000'}}
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
+        <div class="bg-cover h-48"></div>
+        <div class="p-4 flex-1 flex flex-col" style="">
+        <b>Stato:</b> {{item.statuses[0]['status']}}
+        <b>Ora:</b> {{item.statuses[0]['timestamp'] * 1000 | date :'dd/MM/yyyy HH:mm':'+0000'}}
+            <h3 class="mb-4 text-2xl"></h3>
+            <div class="mb-4 text-grey-darker text-sm flex-1"></div>
+            </div>
+            </div>
+            </div>
     </mat-card-content>
     </ul>
- </mat-card>`
-  ,  
+    </mat-card>
+    `
+  ,
   styleUrls: ['./inviati.component.scss']
 })
 export class InviatiComponent implements OnInit {
