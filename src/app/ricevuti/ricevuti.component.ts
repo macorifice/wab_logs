@@ -38,7 +38,8 @@ export class RicevutiComponent implements OnInit {
   scrHeight:any;
   scrWidth:any;
 
-  dataArray : any []; 
+  dataArray : any [];
+  dataArraySend : any []; 
 
   constructor(private httpService: HttpClient, private router: Router) { }
 
@@ -57,6 +58,15 @@ export class RicevutiComponent implements OnInit {
       (err: HttpErrorResponse) => {
         console.log (err.message);
       })
+
+      this.httpService.get('https://2lb3om3x53.execute-api.eu-west-1.amazonaws.com/prod/webhook').subscribe(
+        data => {
+          this.dataArraySend = data as object [];
+          this.dataArraySend = this.dataArraySend.filter(element => element.hasOwnProperty('statuses'));
+        },
+        (err: HttpErrorResponse) => {
+          console.log (err.message);
+        })
       
       this.goToBottom();
       

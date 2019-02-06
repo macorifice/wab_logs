@@ -1,5 +1,5 @@
 <div style="height: 100vh;">
-        <mat-toolbar color="primary">
+        <mat-toolbar class="app-toolbar" color="primary">
           <mat-toolbar-row>
             <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
               <mat-icon>menu</mat-icon>
@@ -24,9 +24,6 @@
               <a href="rispondi" mat-list-item>
                 <mat-icon>account_box</mat-icon>
                 Invia
-              </a>
-              <a (click)="sidenav.toggle()" mat-list-item>
-                <mat-icon>close</mat-icon> Close
               </a>
             </mat-nav-list>
           </mat-sidenav>
